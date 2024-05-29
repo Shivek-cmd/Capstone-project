@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Form from "./pages/Form/Form.jsx";
-import Genre from "./pages/Genre";
+import Genre from "./pages/Genre/Genre.jsx";
 import Info from "./pages/Info";
 import Movies from "./pages/Movies";
 import NotFound from "./pages/404";
+
 function App() {
   return (
     <BrowserRouter>

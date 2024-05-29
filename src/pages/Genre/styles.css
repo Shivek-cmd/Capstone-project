@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+body {
+  background-color: black;
+}
+
+.info-section {
+  margin: 40px 10px 20px 140px;
+  padding: 20px 20px 10px 20px;
+  width: 40%;
+  display: flex;
+  line-height: 1.5;
+  flex-direction: column;
+  text-align: left; /* Center items horizontally */
+}
+.info-section h1 {
+  font-family: Single Day;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #72db73;
+  line-height: 99.18px;
+}
+
+.info-section p {
+  margin-top: 20px;
+  font-family: Roboto;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 80px;
+  color: white;
+  padding-right: 20px;
+}
+
+.chip-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 0.3fr);
+  /* Adjust column gap as needed */
+  row-gap: 10px; /* Decrease the gap between rows */
+}
+
+.movie-selection-section {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 0.1fr);
+}
+
+.next-button {
+  padding: 10px;
+  background-color: grey;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  width: 100px;
+  height: 35px;
+  position: fixed;
+  bottom: 20px;
+  right: 125px;
+  font-family: DM Sans;
+}
+
+.next-button.enabled {
+  background-color: green;
+}

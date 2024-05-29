@@ -1,10 +1,12 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./styles.css";
 import Superapp from "../../assets/Superapp.png";
+import "./styles.css";
 
 export default function Form() {
   const navigate = useNavigate();
+
+  // State for form data and errors
   const [formData, setFormData] = useState({
     name: "",
     username: "",
@@ -20,66 +22,42 @@ export default function Form() {
     checkbox: "",
   });
 
+  // Handle form input changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Handle checkbox change
   const handleCheckbox = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.checked });
   };
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Validate form fields
     let newErrors = { ...errors };
-    if (
-      formData.name.trim().length === 0 ||
-      formData.name === undefined ||
-      formData.name === null
-    ) {
-      newErrors.name = "Name is required";
-    } else {
-      newErrors.name = "";
-    }
-    if (
-      formData.username.trim().length === 0 ||
-      formData.username === undefined ||
-      formData.username === null
-    ) {
-      newErrors.username = "Username is required";
-    } else {
-      newErrors.username = "";
-    }
-    if (
-      formData.email.trim().length === 0 ||
-      formData.email === undefined ||
-      formData.email === null
-    ) {
-      newErrors.email = "Email is required";
-    } else {
-      newErrors.email = "";
-    }
-    if (
-      formData.mobile.trim().length === 0 ||
-      formData.mobile === undefined ||
-      formData.mobile === null
-    ) {
-      newErrors.mobile = "Mobile is required";
-    } else {
-      newErrors.mobile = "";
+    for (const field in formData) {
+      if (!formData[field]) {
+        newErrors[field] = `${
+          field.charAt(0).toUpperCase() + field.slice(1)
+        } is required`;
+      } else {
+        newErrors[field] = "";
+      }
     }
     if (!formData.checkbox) {
       newErrors.checkbox = "Please accept the terms and conditions";
     } else {
       newErrors.checkbox = "";
     }
+
+    // Set errors state
     setErrors({ ...newErrors });
-    if (
-      newErrors.name === "" &&
-      newErrors.username === "" &&
-      newErrors.email === "" &&
-      newErrors.mobile === "" &&
-      newErrors.checkbox === ""
-    ) {
+
+    // If no errors, proceed with form submission
+    if (Object.values(newErrors).every((error) => !error)) {
       localStorage.setItem("userData", JSON.stringify(formData));
       navigate("/genre");
     }
@@ -87,17 +65,23 @@ export default function Form() {
 
   return (
     <div className="container">
+      {/* Left Panel */}
       <div className="left-panel">
-        <img src={Superapp} alt="blank" />
-        <p> Discover new things on Superapp</p>
+        <img src={Superapp} alt="Superapp Logo" />
+        <p>Discover new things on Superapp</p>
       </div>
 
+      {/* Form */}
       <form className="form-container" onSubmit={handleSubmit}>
+        {/* Form Header */}
         <div className="form-header">
           <h1 className="main-heading">Super App</h1>
           <p className="sub-heading">Create your new account</p>
         </div>
+
+        {/* Form Fields */}
         <div className="form">
+          {/* Name */}
           <div className="input-container">
             <input
               type="text"
@@ -108,6 +92,8 @@ export default function Form() {
             />
             <p className="error-message">{errors.name}</p>
           </div>
+
+          {/* Username */}
           <div className="input-container">
             <input
               type="text"
@@ -118,6 +104,8 @@ export default function Form() {
             />
             <p className="error-message">{errors.username}</p>
           </div>
+
+          {/* Email */}
           <div className="input-container">
             <input
               type="email"
@@ -128,6 +116,8 @@ export default function Form() {
             />
             <p className="error-message">{errors.email}</p>
           </div>
+
+          {/* Mobile */}
           <div className="input-container">
             <input
               type="tel"
@@ -138,6 +128,8 @@ export default function Form() {
             />
             <p className="error-message">{errors.mobile}</p>
           </div>
+
+          {/* Checkbox */}
           <div className="checkbox-container">
             <input
               onChange={handleCheckbox}
@@ -151,8 +143,10 @@ export default function Form() {
             <p className="error-message">{errors.checkbox}</p>
           </div>
 
+          {/* Submit Button */}
           <button type="submit">SIGN UP</button>
 
+          {/* Additional Information */}
           <div className="info-text">
             <p className="info-text-item">
               By clicking on Sign up, you agree to Superapp{" "}
