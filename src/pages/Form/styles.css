@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+}
+body {
+  overflow: hidden; /* Prevents scrolling */
+}
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left-panel {
+  background-color: black;
+  height: 100vh;
+  width: 50vw;
+  position: relative;
+}
+
+.left-panel img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.left-panel p {
+  position: absolute;
+  bottom: 40px;
+  left: 20px;
+  color: white;
+  font: bold 3.5rem "Roboto", sans-serif;
+  padding: 35px;
+  margin: 0;
+}
+
+.form-container {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 50vw;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.form-header {
+  text-align: center;
+}
+
+.main-heading {
+  font: 3rem "Single Day", sans-serif;
+  color: #72db73;
+  margin-bottom: 20px;
+}
+
+.sub-heading {
+  font: 1.2rem "DM Sans", sans-serif;
+}
+.form {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.input-container {
+  margin-bottom: 20px;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: #292929;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #7c7c7c;
+}
+
+.checkbox-container input {
+  margin-right: 10px;
+}
+
+.checkbox-container label {
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  border: none;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #4caf50;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+.info-text {
+  margin-top: 20px;
+  text-align: left;
+  color: #7c7c7c;
+}
+
+.info-text-item {
+  margin-top: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.info-text-item a {
+  color: #72db73;
+  text-decoration: none;
+}
+
+.info-text-item a:hover {
+  text-decoration: underline;
+}
