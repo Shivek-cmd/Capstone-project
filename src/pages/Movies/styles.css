@@ -1,0 +1,71 @@
+.app-container {
+  padding: 20px 30px;
+  background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.37) 100%);
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.app-title {
+  font-family: Single Day;
+  color: #72db73;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+.profile-image {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.content {
+  width: 95vw;
+  margin: auto;
+  margin-left: 2rem;
+  height: 80vh; /* Adjust the height as needed */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+.content-description {
+  color: #ffffff;
+  font-family: Roboto;
+  font-size: 1.3rem;
+
+  font-weight: 500;
+}
+.genre-container {
+  margin-top: 30px;
+}
+
+.genre-title {
+  color: #878787;
+  font-family: Roboto;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90vw;
+  margin-left: 0.8rem;
+  margin-top: 10px;
+}
+
+.movie-card {
+  margin: 15px 25px;
+  width: 250px;
+  height: 150px;
+}
+
+.movie-image {
+  height: 150px;
+  width: 250px;
+  border-radius: 10px;
+  cursor: pointer;
+}
